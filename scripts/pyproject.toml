@@ -1,34 +1,16 @@
 [project]
-name = "fast-fonts"
+name = "scripts"
 version = "0.1.0"
-description = "Fast Font generator for speed reading optimization"
+description = "Add your description here"
+readme = "README.md"
 authors = [
-    {name = "Fast-Fonts", email = "user@example.com"}
+    { name = "y0usaf", email = "OA99@Outlook.com" }
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.13"
 dependencies = [
-    "fonttools[ufo]>=4.38.0",
-    "defcon>=0.10.0",
-    "ufoLib2>=0.13.0",
+    "fonttools>=4.59.2",
 ]
-
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
-    "black>=22.0.0",
-    "isort>=5.10.0",
-]
-
-[project.scripts]
-generate-fonts = "generate_fonts:main"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.black]
-line-length = 88
-target-version = ['py38']
-
-[tool.isort]
-profile = "black"
+requires = ["uv_build>=0.8.6,<0.9.0"]
+build-backend = "uv_build"

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fast Fonts</title>
+</head>
+<body>
+    <center>
+        <h1>Fast Fonts</h1>
+        
+        <select id="fontSelect">
+            <option value="Fast Sans">Fast Sans</option>
+            <option value="Fast Sans Dotted">Fast Sans Dotted</option>
+            <option value="Fast Serif">Fast Serif</option>
+            <option value="Fast Mono">Fast Mono</option>
+            <option value="Go Mono Fast">Go Mono Fast</option>
+            <option value="Terminus Fast">Terminus Fast</option>
+            <option value="Iosevka Term Slab Fast Heavy">Iosevka Term Slab Fast Heavy</option>
+            <option value="Iosevka Term Slab Fast Extra Bold">Iosevka Term Slab Fast Extra Bold</option>
+        </select>
+        
+        <button onclick="toggle()">Toggle Fast</button>
+        
+        <br><br>
+        
+        <div id="preview">The quick brown fox jumps over the lazy dog. This is a test of the fast reading font feature.</div>
+    </center>
+
+    <script>
+        const fonts = {
+            'Fast Sans': 'fonts/Fast_Sans.ttf',
+            'Fast Sans Dotted': 'fonts/Fast_Sans_Dotted.ttf',
+            'Fast Serif': 'fonts/Fast_Serif.ttf',
+            'Fast Mono': 'fonts/Fast_Mono.ttf',
+            'Go Mono Fast': 'fonts/Go-Mono-Fast.ttf',
+            'Terminus Fast': 'fonts/Terminus_Fast.ttf',
+            'Iosevka Term Slab Fast Heavy': 'fonts/IosevkaTermSlab_Fast_Heavy.ttf',
+            'Iosevka Term Slab Fast Extra Bold': 'fonts/IosevkaTermSlab_Fast_ExtraBold.ttf'
+        };
+
+        let fastEnabled = true;
+
+        async function loadFonts() {
+            for (const [name, url] of Object.entries(fonts)) {
+                const font = new FontFace(name, `url(${url})`);
+                await font.load();
+                document.fonts.add(font);
+            }
+        }
+
+        function updateFont() {
+            const preview = document.getElementById('preview');
+            const selected = document.getElementById('fontSelect').value;
+            preview.style.fontFamily = `"${selected}", monospace`;
+            preview.style.fontSize = '18px';
+            preview.style.fontFeatureSettings = fastEnabled ? '"calt" 1' : '"calt" 0';
+        }
+
+        function toggle() {
+            fastEnabled = !fastEnabled;
+            updateFont();
+        }
+
+        document.getElementById('fontSelect').addEventListener('change', updateFont);
+        loadFonts().then(updateFont);
+    </script>
+</body>
+</html>
