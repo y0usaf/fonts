@@ -1,16 +1,8 @@
 [project]
-name = "scripts"
+name = "fast-font-tools"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-authors = [
-    { name = "y0usaf", email = "OA99@Outlook.com" }
-]
+description = "Tools for creating Fast fonts from regular and bold font pairs"
 requires-python = ">=3.13"
 dependencies = [
     "fonttools>=4.59.2",
 ]
-
-[build-system]
-requires = ["uv_build>=0.8.6,<0.9.0"]
-build-backend = "uv_build"
