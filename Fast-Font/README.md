@@ -1,4 +1,4 @@
-# THIS IS A COPY OF [https://github.com/Born2Root/Fast-Font](https://github.com/Born2Root/Fast-Font), ALL RIGHTS GO TO THE ORIGINAL AUTHORS AND OWNERS
+# THIS IS A COPY OF [Born2Root/Fast-Font](https://github.com/Born2Root/Fast-Font), ALL RIGHTS GO TO THE ORIGINAL AUTHORS AND OWNERS
 
 # Fast Font
 
