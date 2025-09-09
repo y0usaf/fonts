@@ -13,10 +13,9 @@
             <option value="Fast Sans Dotted">Fast Sans Dotted</option>
             <option value="Fast Serif">Fast Serif</option>
             <option value="Fast Mono">Fast Mono</option>
-            <option value="Go Mono Fast">Go Mono Fast</option>
-            <option value="Terminus Fast">Terminus Fast</option>
-            <option value="Iosevka Term Slab Fast Heavy">Iosevka Term Slab Fast Heavy</option>
-            <option value="Iosevka Term Slab Fast ExtraBold">Iosevka Term Slab Fast ExtraBold</option>
+            <option value="Fast GoMono">Fast GoMono</option>
+            <option value="Fast Terminus">Fast Terminus</option>
+            <option value="Fast IosevkaSlab">Fast IosevkaSlab</option>
         </select>
         
         <button onclick="toggle()">Toggle Fast</button>
@@ -32,19 +31,23 @@
             'Fast Sans Dotted': 'fonts/Fast_Sans_Dotted.ttf',
             'Fast Serif': 'fonts/Fast_Serif.ttf',
             'Fast Mono': 'fonts/Fast_Mono.ttf',
-            'Go Mono Fast': 'fonts/Go-Mono-Fast.ttf',
-            'Terminus Fast': 'fonts/Terminus_Fast.ttf',
-            'Iosevka Term Slab Fast Heavy': 'fonts/IosevkaTermSlab_Fast_Heavy.ttf',
-            'Iosevka Term Slab Fast ExtraBold': 'fonts/IosevkaTermSlab_Fast_ExtraBold.ttf'
+            'Fast GoMono': 'fonts/Fast_GoMono.ttf',
+            'Fast Terminus': 'fonts/Fast_Terminus.ttf',
+            'Fast IosevkaSlab': 'fonts/Fast_IosevkaSlab.ttf'
         };
 
         let fastEnabled = true;
 
         async function loadFonts() {
             for (const [name, url] of Object.entries(fonts)) {
-                const font = new FontFace(name, `url(${url})`);
-                await font.load();
-                document.fonts.add(font);
+                try {
+                    const font = new FontFace(name, `url(${url})`);
+                    await font.load();
+                    document.fonts.add(font);
+                    console.log(`✓ Loaded: ${name}`);
+                } catch (e) {
+                    console.error(`✗ Failed to load ${name}:`, e);
+                }
             }
         }
 
