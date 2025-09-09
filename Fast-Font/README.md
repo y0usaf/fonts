@@ -1,3 +1,5 @@
+# THIS IS A COPY OF https://github.com/Born2Root/Fast-Font, ALL RIGHTS GO TO THE ORIGINAL AUTHORS AND OWNERS
+
 # Fast Font
 
 > **A** **fo**nt **t**o **he**lp **y**ou **re**ad **fas**ter.
