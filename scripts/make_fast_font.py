@@ -9,6 +9,10 @@ bold glyph variants and contextual alternates.
 from fontTools.ttLib import TTFont
 from fontTools.feaLib.builder import addOpenTypeFeatures
 from fontTools.feaLib.parser import Parser
+from fontTools.misc.transform import Transform
+from fontTools.pens.boundsPen import BoundsPen
+from fontTools.pens.transformPen import TransformPen
+from fontTools.pens.ttGlyphPen import TTGlyphPen
 from argparse import ArgumentParser
 import tempfile
 import os
@@ -57,7 +61,19 @@ feature calt {
 """
 
 
-def add_bold_glyphs(font, bold_font):
+def transformed_glyph(glyph_set, glyph_name, transform):
+    pen = TTGlyphPen(glyph_set)
+    glyph_set[glyph_name].draw(TransformPen(pen, transform))
+    return pen.glyph()
+
+
+def transformed_lsb(glyph_set, glyph_name, transform, fallback_lsb):
+    pen = BoundsPen(glyph_set)
+    glyph_set[glyph_name].draw(TransformPen(pen, transform))
+    return fallback_lsb if pen.bounds is None else round(pen.bounds[0])
+
+
+def add_bold_glyphs(font, bold_font, *, bold_scale_x=1.0):
     """Add bold glyph variants to the regular font."""
     print("Adding bold glyph variants...")
     
@@ -67,9 +83,9 @@ def add_bold_glyphs(font, bold_font):
     
     # Get glyph tables
     glyf = font['glyf']
-    bold_glyf = bold_font['glyf']
     hmtx = font['hmtx']
-    bold_hmtx = bold_font['hmtx']
+    bold_metrics = bold_font['hmtx'].metrics
+    bold_glyph_set = bold_font.getGlyphSet()
     
     # Characters to process (a-z, A-Z)
     chars = []
@@ -91,15 +107,14 @@ def add_bold_glyphs(font, bold_font):
             # Create .bold variant name
             bold_variant = f"{regular_glyph}.bold"
             
-            # Copy glyph outline from bold font
-            if bold_glyph in bold_glyf:
-                # Copy the glyph data
-                glyf[bold_variant] = bold_glyf[bold_glyph]
-                
-                # Copy metrics
-                if bold_glyph in bold_hmtx.metrics:
-                    hmtx[bold_variant] = bold_hmtx[bold_glyph]
-                
+            if bold_glyph in bold_metrics:
+                adv, lsb = bold_metrics[bold_glyph]
+                transform = Transform(1, 0, 0, 1, 0, 0)
+                if bold_scale_x != 1.0:
+                    advance_center = adv / 2
+                    transform = Transform().translate(advance_center, 0).scale(bold_scale_x, 1).translate(-advance_center, 0)
+                glyf[bold_variant] = transformed_glyph(bold_glyph_set, bold_glyph, transform)
+                hmtx[bold_variant] = (adv, transformed_lsb(bold_glyph_set, bold_glyph, transform, lsb))
                 added_count += 1
     
     print(f"Added {added_count} bold glyph variants")
@@ -125,6 +140,12 @@ def main():
         "-o", "--output",
         help="Output Fast Font file (default: adds _Fast suffix)"
     )
+    parser.add_argument(
+        "--bold-scale-x",
+        type=float,
+        default=1.0,
+        help="Horizontally scale copied bold glyphs (default: 1.0)"
+    )
     
     args = parser.parse_args()
     
@@ -148,7 +169,7 @@ def main():
         bold_font = TTFont(args.bold)
         
         # Add bold glyph variants
-        added = add_bold_glyphs(font, bold_font)
+        added = add_bold_glyphs(font, bold_font, bold_scale_x=args.bold_scale_x)
         
         if added == 0:
             print("Warning: No bold glyphs were added")
