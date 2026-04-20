@@ -10,6 +10,7 @@ OUT="../fonts"
 BOLD_SCALE_X="${BOLD_SCALE_X:-1.23}"
 
 mkdir -p "$OUT"
+fix_plain() { uv run python fix_font_names.py "$OUT/$1" --family "Iosevka Term Slab Compact" --subfamily "$2"; }
 
 echo "== Upright → Fast_IosevkaTermSlabCompact.ttf =="
 uv run python make_fast_font.py \
@@ -31,13 +32,19 @@ uv run python fix_font_names.py "$OUT/Fast_IosevkaTermSlabCompact_Italic.ttf" \
   --family "Fast Iosevka Term Slab Compact" --subfamily Italic
 
 echo
-echo "== Copy plain (non-Fast) Iosevka TTFs alongside (Iosevka naming is already correct) =="
+echo "== Copy plain (non-Fast) Iosevka TTFs alongside + normalize metadata =="
 install -m644 "$SRC/IosevkaTermSlabCompact-Light.ttf"       "$OUT/IosevkaTermSlabCompact-Light.ttf"
 install -m644 "$SRC/IosevkaTermSlabCompact-LightItalic.ttf" "$OUT/IosevkaTermSlabCompact-LightItalic.ttf"
 install -m644 "$SRC/IosevkaTermSlabCompact-Regular.ttf"     "$OUT/IosevkaTermSlabCompact-Regular.ttf"
 install -m644 "$SRC/IosevkaTermSlabCompact-Italic.ttf"      "$OUT/IosevkaTermSlabCompact-Italic.ttf"
 install -m644 "$SRC/IosevkaTermSlabCompact-Bold.ttf"        "$OUT/IosevkaTermSlabCompact-Bold.ttf"
 install -m644 "$SRC/IosevkaTermSlabCompact-BoldItalic.ttf"  "$OUT/IosevkaTermSlabCompact-BoldItalic.ttf"
+fix_plain IosevkaTermSlabCompact-Light.ttf "Light"
+fix_plain IosevkaTermSlabCompact-LightItalic.ttf "Light Italic"
+fix_plain IosevkaTermSlabCompact-Regular.ttf Regular
+fix_plain IosevkaTermSlabCompact-Italic.ttf Italic
+fix_plain IosevkaTermSlabCompact-Bold.ttf Bold
+fix_plain IosevkaTermSlabCompact-BoldItalic.ttf "Bold Italic"
 
 echo
 ls -lh "$OUT/"*IosevkaTermSlabCompact*.ttf

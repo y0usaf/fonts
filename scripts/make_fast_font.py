@@ -8,12 +8,12 @@ bold glyph variants and contextual alternates.
 
 from fontTools.ttLib import TTFont
 from fontTools.feaLib.builder import addOpenTypeFeatures
-from fontTools.feaLib.parser import Parser
 from fontTools.misc.transform import Transform
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.pens.ttGlyphPen import TTGlyphPen
 from argparse import ArgumentParser
+from fix_font_names import best_name, normalize_font_metadata
 import tempfile
 import os
 import sys
@@ -121,6 +121,22 @@ def add_bold_glyphs(font, bold_font, *, bold_scale_x=1.0):
     return added_count
 
 
+def source_family_subfamily(font):
+    if 'name' not in font:
+        return None, None
+    nt = font['name']
+    family = best_name(nt, 16) or best_name(nt, 1)
+    subfamily = best_name(nt, 17) or best_name(nt, 2)
+    return family, subfamily
+
+
+def fast_family_name(family: str | None) -> str | None:
+    if not family:
+        return None
+    family = family.strip()
+    return family if family.startswith("Fast ") else f"Fast {family}"
+
+
 def main():
     parser = ArgumentParser(
         description="Create Fast Font from regular and bold font files"
@@ -192,11 +208,15 @@ def main():
         finally:
             os.unlink(temp_fea)
         
-        # Update font name
-        if 'name' in font:
+        # Normalize metadata when the source style maps cleanly to RIBBI.
+        family, subfamily = source_family_subfamily(font)
+        if family and subfamily:
+            meta = normalize_font_metadata(font, fast_family_name(family), subfamily)
+            print(f"✓ Metadata normalized: {meta['full']}")
+        elif 'name' in font:
             name_table = font['name']
             for record in name_table.names:
-                if record.nameID in [1, 4]:  # Family and full name
+                if record.nameID in [1, 4]:
                     old_name = record.toUnicode()
                     if 'Fast' not in old_name:
                         record.string = f"{old_name} Fast"
