@@ -152,14 +152,11 @@ def make_preview(font_path: Path, out_path: Path, text: str, font_size: int) -> 
     return label, out_path.as_posix()
 
 
-def preview_table(rows: list[tuple[str, str, str]], image_width: int) -> str:
-    return (
-        "| Font | Preview |\n"
-        "| --- | --- |\n"
-        + "".join(
-            f'| `{name}` | <img src="{path}" alt="{html.escape(label)} preview" width="{image_width}"> |\n'
-            for name, label, path in rows
-        )
+def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
+    return "".join(
+        f"### {name}\n\n"
+        f'<img src="{path}" alt="{html.escape(label)} preview" width="{image_width}">\n\n'
+        for name, label, path in rows
     )
 
 
@@ -176,7 +173,7 @@ Regenerate the SVGs and this README section with:
 nix develop -c ./scripts/generate_previews.py
 ```
 
-{preview_table(rows, image_width).rstrip()}
+{preview_list(rows, image_width).rstrip()}
 """
 
 
@@ -222,8 +219,14 @@ def main() -> None:
         rows.append((font_path.name, label, svg_path))
         print(f"wrote {svg_path}")
 
+    expected_svgs = {f"{safe_id(font_path.stem)}.svg" for font_path in font_paths}
+    for stale_svg in sorted(args.out_dir.glob("*.svg")):
+        if stale_svg.name not in expected_svgs:
+            stale_svg.unlink()
+            print(f"removed {stale_svg.as_posix()}")
+
     manifest = args.out_dir / "README-snippet.md"
-    manifest.write_text(preview_table(rows, args.image_width), encoding="utf-8")
+    manifest.write_text(preview_list(rows, args.image_width), encoding="utf-8")
     print(f"wrote {manifest.as_posix()}")
 
     if not args.no_readme:
