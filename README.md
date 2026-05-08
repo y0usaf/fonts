@@ -2,10 +2,6 @@
 
 <p align="center">Fonts I use</p>
 
-## Previews
-
-GitHub README Markdown cannot load arbitrary local fonts for live text, so these previews are generated as standalone SVGs with HarfBuzz-shaped glyph outlines. That applies OpenType features such as the Sonic `calt` substitutions. The SVG backgrounds are transparent and the preview text adapts for light/dark themes.
-
 Preview phrase: “Sphinx of black quartz, judge my vow.”
 
 Regenerate the SVGs and this README section with:
@@ -17,8 +13,7 @@ nix develop -c ./scripts/generate_previews.py
 <table>
   <tr>
     <td align="center">
-      <h2>⚡ Sonic Fonts</h2>
-      <p><em>Fast-reading variants with Sonic OpenType substitutions.</em></p>
+      <h2 align="center">⚡ Sonic Fonts ⚡</h2>
     </td>
   </tr>
 </table>
@@ -62,8 +57,7 @@ nix develop -c ./scripts/generate_previews.py
 <table>
   <tr>
     <td align="center">
-      <h2>Regular Fonts</h2>
-      <p><em>Regular font files without Sonic substitutions.</em></p>
+      <h2 align="center">🍉 Regular Fonts 🍉</h2>
     </td>
   </tr>
 </table>
