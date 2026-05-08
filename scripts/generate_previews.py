@@ -177,9 +177,14 @@ def preview_items(rows: list[tuple[str, str, str]], image_width: int, heading_le
 
 def preview_group(title: str, description: str, rows: list[tuple[str, str, str]], image_width: int) -> str:
     return (
-        "---\n\n"
-        f'<h2 align="center">{html.escape(title)}</h2>\n\n'
-        f'<p align="center"><em>{html.escape(description)}</em></p>\n\n'
+        "<table>\n"
+        "  <tr>\n"
+        "    <td align=\"center\">\n"
+        f"      <h2>{html.escape(title)}</h2>\n"
+        f"      <p><em>{html.escape(description)}</em></p>\n"
+        "    </td>\n"
+        "  </tr>\n"
+        "</table>\n\n"
         + preview_items(rows, image_width, 4).rstrip()
     )
 
@@ -191,7 +196,7 @@ def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
     if sonic_rows:
         sections.append(
             preview_group(
-                "Sonic Fonts",
+                "⚡ Sonic Fonts",
                 "Fast-reading variants with Sonic OpenType substitutions.",
                 sonic_rows,
                 image_width,
