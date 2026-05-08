@@ -61,7 +61,7 @@ Other Sonic variants follow the same metadata rule: family names end in `Sonic`,
 
 ## Previews
 
-GitHub README Markdown cannot load arbitrary local fonts for live text, so these previews are generated as standalone SVGs with glyph outlines. That keeps the exact font shapes visible without relying on custom CSS or installed fonts.
+GitHub README Markdown cannot load arbitrary local fonts for live text, so these previews are generated as standalone SVGs with HarfBuzz-shaped glyph outlines. That applies OpenType features such as the Sonic `calt` substitutions while keeping font names outside the images.
 
 Preview phrase: “Sphinx of black quartz, judge my vow.”
 
