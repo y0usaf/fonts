@@ -22,6 +22,7 @@ PHRASE = "Sphinx of black quartz, judge my vow."
 FONT_EXTS = {".ttf", ".otf"}
 DEFAULT_README = Path("README.md")
 README_SECTION_HEADING = "## Previews"
+PREVIEW_CACHE_VERSION = "transparent-v2"
 
 
 def safe_id(text: str) -> str:
@@ -139,10 +140,11 @@ def make_preview(font_path: Path, out_path: Path, text: str, font_size: int) -> 
     d = " ".join(path_parts)
     escaped_label = html.escape(label)
     escaped_text = html.escape(text)
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc" style="background: transparent;">
   <title id="title">{escaped_label} preview</title>
   <desc id="desc">{escaped_text}</desc>
   <style>
+    svg {{ background: transparent; }}
     .preview-text {{ fill: #24292f; }}
     @media (prefers-color-scheme: dark) {{
       .preview-text {{ fill: #f0f6fc; }}
@@ -161,11 +163,14 @@ def is_sonic(name: str) -> bool:
     return "Sonic" in Path(name).stem
 
 
+def readme_image_src(path: str) -> str:
+    return f"{path}?v={PREVIEW_CACHE_VERSION}"
+
 def preview_items(rows: list[tuple[str, str, str]], image_width: int, heading_level: int) -> str:
     heading = "#" * heading_level
     return "".join(
         f"{heading} {name}\n\n"
-        f'<img src="{path}" alt="{html.escape(label)} preview" width="{image_width}">\n\n'
+        f'<img src="{readme_image_src(path)}" alt="{html.escape(label)} preview" width="{image_width}">\n\n'
         for name, label, path in rows
     )
 
