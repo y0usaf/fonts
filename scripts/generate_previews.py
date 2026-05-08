@@ -142,8 +142,13 @@ def make_preview(font_path: Path, out_path: Path, text: str, font_size: int) -> 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">
   <title id="title">{escaped_label} preview</title>
   <desc id="desc">{escaped_text}</desc>
-  <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
-  <g transform="translate({baseline_x:.2f} {baseline_y:.2f})" fill="#f0f6fc">
+  <style>
+    .preview-text {{ fill: #24292f; }}
+    @media (prefers-color-scheme: dark) {{
+      .preview-text {{ fill: #f0f6fc; }}
+    }}
+  </style>
+  <g class="preview-text" transform="translate({baseline_x:.2f} {baseline_y:.2f})">
     <path d="{d}"/>
   </g>
 </svg>
@@ -152,18 +157,34 @@ def make_preview(font_path: Path, out_path: Path, text: str, font_size: int) -> 
     return label, out_path.as_posix()
 
 
-def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
+def is_sonic(name: str) -> bool:
+    return "Sonic" in Path(name).stem
+
+
+def preview_items(rows: list[tuple[str, str, str]], image_width: int, heading_level: int) -> str:
+    heading = "#" * heading_level
     return "".join(
-        f"### {name}\n\n"
+        f"{heading} {name}\n\n"
         f'<img src="{path}" alt="{html.escape(label)} preview" width="{image_width}">\n\n'
         for name, label, path in rows
     )
 
 
+def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
+    sonic_rows = [row for row in rows if is_sonic(row[0])]
+    non_sonic_rows = [row for row in rows if not is_sonic(row[0])]
+    sections = []
+    if sonic_rows:
+        sections.append("### Sonic fonts\n\n" + preview_items(sonic_rows, image_width, 4).rstrip())
+    if non_sonic_rows:
+        sections.append("### Non-Sonic fonts\n\n" + preview_items(non_sonic_rows, image_width, 4).rstrip())
+    return "\n\n".join(sections) + "\n"
+
+
 def readme_preview_section(rows: list[tuple[str, str, str]], text: str, image_width: int) -> str:
     return f"""{README_SECTION_HEADING}
 
-GitHub README Markdown cannot load arbitrary local fonts for live text, so these previews are generated as standalone SVGs with HarfBuzz-shaped glyph outlines. That applies OpenType features such as the Sonic `calt` substitutions while keeping font names outside the images.
+GitHub README Markdown cannot load arbitrary local fonts for live text, so these previews are generated as standalone SVGs with HarfBuzz-shaped glyph outlines. That applies OpenType features such as the Sonic `calt` substitutions. The SVG backgrounds are transparent and the preview text adapts for light/dark themes.
 
 Preview phrase: “{text}”
 
