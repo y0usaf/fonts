@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="589" height="73" viewBox="0 0 589 73" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="589" height="73" viewBox="0 0 589 73" role="img" aria-labelledby="title desc" style="background: transparent;">
   <title id="title">Iosevka Term Slab Compact Bold Italic preview</title>
   <desc id="desc">Sphinx of black quartz, judge my vow.</desc>
   <style>
+    svg { background: transparent; }
     .preview-text { fill: #24292f; }
     @media (prefers-color-scheme: dark) {
       .preview-text { fill: #f0f6fc; }
