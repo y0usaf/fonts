@@ -1,5 +1,5 @@
 {
-  description = "y0usaf's Fast Fonts Collection";
+  description = "y0usaf's font collection";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -8,53 +8,44 @@
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in {
-      packages = forAllSystems (system: {
-        # Custom fast fonts (your generated fonts)
-        custom-fast-fonts = nixpkgs.legacyPackages.${system}.stdenvNoCC.mkDerivation {
-          pname = "y0usaf-custom-fast-fonts";
-          version = "1.0.0";
-          src = ./fonts;
+      packages = forAllSystems (system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in {
+          fonts = pkgs.stdenvNoCC.mkDerivation {
+            pname = "y0usaf-fonts";
+            version = "1.0.0";
+            src = ./fonts;
 
-          installPhase = ''
-            mkdir -p $out/share/fonts/truetype
-            find . -name "*.ttf" -exec install -m444 {} $out/share/fonts/truetype/ \;
-          '';
+            installPhase = ''
+              runHook preInstall
 
-          meta = with nixpkgs.legacyPackages.${system}.lib; {
-            description = "Custom fast reading fonts by y0usaf";
-            homepage = "https://github.com/y0usaf/Fast-Fonts";
-            platforms = platforms.all;
-            license = licenses.mit;
+              mkdir -p $out/share/fonts/truetype $out/share/fonts/opentype
+              find . -type f -name "*.ttf" -exec install -m444 -t $out/share/fonts/truetype {} +
+              find . -type f -name "*.otf" -exec install -m444 -t $out/share/fonts/opentype {} +
+
+              runHook postInstall
+            '';
+
+            meta = with pkgs.lib; {
+              description = "y0usaf's font collection and generated fast-reading variants";
+              homepage = "https://github.com/y0usaf/fonts";
+              platforms = platforms.all;
+              license = licenses.agpl3Plus;
+            };
           };
-        };
 
-        # Original fast fonts
-        original-fast-fonts = nixpkgs.legacyPackages.${system}.stdenvNoCC.mkDerivation {
-          pname = "original-fast-fonts";
-          version = "1.0.0";
-          src = ./Fast-Font;
-
-          installPhase = ''
-            mkdir -p $out/share/fonts/truetype
-            install -m444 -Dt $out/share/fonts/truetype *.ttf
-          '';
-
-          meta = with nixpkgs.legacyPackages.${system}.lib; {
-            description = "Original Fast Font Collection";
-            homepage = "https://github.com/Born2Root/Fast-Font";
-            platforms = platforms.all;
-            license = licenses.mit;
+          default = self.packages.${system}.fonts;
+        });
+      devShells = forAllSystems (system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in {
+          default = pkgs.mkShell {
+            packages = [
+              (pkgs.python3.withPackages (ps: [ ps.fonttools ]))
+            ];
           };
-        };
-
-        # All fonts combined
-        default = nixpkgs.legacyPackages.${system}.buildEnv {
-          name = "all-fast-fonts";
-          paths = [ 
-            self.packages.${system}.custom-fast-fonts
-            self.packages.${system}.original-fast-fonts
-          ];
-        };
-      });
+        });
     };
 }
