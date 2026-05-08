@@ -175,13 +175,12 @@ def preview_items(rows: list[tuple[str, str, str]], image_width: int, heading_le
     )
 
 
-def preview_group(title: str, description: str, rows: list[tuple[str, str, str]], image_width: int) -> str:
+def preview_group(title: str, rows: list[tuple[str, str, str]], image_width: int) -> str:
     return (
         "<table>\n"
         "  <tr>\n"
         "    <td align=\"center\">\n"
-        f"      <h2>{html.escape(title)}</h2>\n"
-        f"      <p><em>{html.escape(description)}</em></p>\n"
+        f"      <h2 align=\"center\">{html.escape(title)}</h2>\n"
         "    </td>\n"
         "  </tr>\n"
         "</table>\n\n"
@@ -196,8 +195,7 @@ def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
     if sonic_rows:
         sections.append(
             preview_group(
-                "⚡ Sonic Fonts",
-                "Fast-reading variants with Sonic OpenType substitutions.",
+                "⚡ Sonic Fonts ⚡",
                 sonic_rows,
                 image_width,
             )
@@ -205,8 +203,7 @@ def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
     if regular_rows:
         sections.append(
             preview_group(
-                "Regular Fonts",
-                "Regular font files without Sonic substitutions.",
+                "🍉 Regular Fonts 🍉",
                 regular_rows,
                 image_width,
             )
@@ -215,11 +212,7 @@ def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
 
 
 def readme_preview_section(rows: list[tuple[str, str, str]], text: str, image_width: int) -> str:
-    return f"""{README_SECTION_HEADING}
-
-GitHub README Markdown cannot load arbitrary local fonts for live text, so these previews are generated as standalone SVGs with HarfBuzz-shaped glyph outlines. That applies OpenType features such as the Sonic `calt` substitutions. The SVG backgrounds are transparent and the preview text adapts for light/dark themes.
-
-Preview phrase: “{text}”
+    return f"""Preview phrase: “{text}”
 
 Regenerate the SVGs and this README section with:
 

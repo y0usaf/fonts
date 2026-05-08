@@ -1,8 +1,7 @@
 <table>
   <tr>
     <td align="center">
-      <h2>⚡ Sonic Fonts</h2>
-      <p><em>Fast-reading variants with Sonic OpenType substitutions.</em></p>
+      <h2 align="center">⚡ Sonic Fonts ⚡</h2>
     </td>
   </tr>
 </table>
@@ -46,8 +45,7 @@
 <table>
   <tr>
     <td align="center">
-      <h2>Regular Fonts</h2>
-      <p><em>Regular font files without Sonic substitutions.</em></p>
+      <h2 align="center">🍉 Regular Fonts 🍉</h2>
     </td>
   </tr>
 </table>
