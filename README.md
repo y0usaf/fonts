@@ -14,7 +14,11 @@ Regenerate the SVGs and this README section with:
 nix develop -c ./scripts/generate_previews.py
 ```
 
-### Sonic fonts
+---
+
+<h2 align="center">Sonic Fonts</h2>
+
+<p align="center"><em>Fast-reading variants with Sonic OpenType substitutions.</em></p>
 
 #### AtkinsonHyperlegibleMono-Regular-Sonic.ttf
 
@@ -52,7 +56,11 @@ nix develop -c ./scripts/generate_previews.py
 
 <img src="assets/previews/Terminus-Regular-Sonic.svg?v=transparent-v2" alt="Terminus Regular Sonic preview" width="720">
 
-### Non-Sonic fonts
+---
+
+<h2 align="center">Regular Fonts</h2>
+
+<p align="center"><em>Regular font files without Sonic substitutions.</em></p>
 
 #### CommitMono-275-Italic.otf
 
