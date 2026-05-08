@@ -175,14 +175,37 @@ def preview_items(rows: list[tuple[str, str, str]], image_width: int, heading_le
     )
 
 
+def preview_group(title: str, description: str, rows: list[tuple[str, str, str]], image_width: int) -> str:
+    return (
+        "---\n\n"
+        f'<h2 align="center">{html.escape(title)}</h2>\n\n'
+        f'<p align="center"><em>{html.escape(description)}</em></p>\n\n'
+        + preview_items(rows, image_width, 4).rstrip()
+    )
+
+
 def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
     sonic_rows = [row for row in rows if is_sonic(row[0])]
-    non_sonic_rows = [row for row in rows if not is_sonic(row[0])]
+    regular_rows = [row for row in rows if not is_sonic(row[0])]
     sections = []
     if sonic_rows:
-        sections.append("### Sonic fonts\n\n" + preview_items(sonic_rows, image_width, 4).rstrip())
-    if non_sonic_rows:
-        sections.append("### Non-Sonic fonts\n\n" + preview_items(non_sonic_rows, image_width, 4).rstrip())
+        sections.append(
+            preview_group(
+                "Sonic Fonts",
+                "Fast-reading variants with Sonic OpenType substitutions.",
+                sonic_rows,
+                image_width,
+            )
+        )
+    if regular_rows:
+        sections.append(
+            preview_group(
+                "Regular Fonts",
+                "Regular font files without Sonic substitutions.",
+                regular_rows,
+                image_width,
+            )
+        )
     return "\n\n".join(sections) + "\n"
 
 
