@@ -10,11 +10,11 @@
 
 <img src="assets/previews/AtkinsonHyperlegibleMono-Regular-Sonic.svg?v=transparent-v2" alt="Atkinson Hyperlegible Mono Regular Sonic preview" width="720">
 
-#### CommitMono-200-Italic-Sonic.otf
+#### CommitMono-200-Italic-Sonic.ttf
 
 <img src="assets/previews/CommitMono-200-Italic-Sonic.svg?v=transparent-v2" alt="CommitMono 200 Sonic Italic preview" width="720">
 
-#### CommitMono-200-Regular-Sonic.otf
+#### CommitMono-200-Regular-Sonic.ttf
 
 <img src="assets/previews/CommitMono-200-Regular-Sonic.svg?v=transparent-v2" alt="CommitMono 200 Regular Sonic preview" width="720">
 
@@ -50,15 +50,15 @@
   </tr>
 </table>
 
-#### CommitMono-275-Italic.otf
+#### CommitMono-275-Italic.ttf
 
 <img src="assets/previews/CommitMono-275-Italic.svg?v=transparent-v2" alt="CommitMono 275 Italic preview" width="720">
 
-#### CommitMono-275-Regular.otf
+#### CommitMono-275-Regular.ttf
 
 <img src="assets/previews/CommitMono-275-Regular.svg?v=transparent-v2" alt="CommitMono 275 Regular preview" width="720">
 
-#### DepartureMono-Regular.otf
+#### DepartureMono-Regular.ttf
 
 <img src="assets/previews/DepartureMono-Regular.svg?v=transparent-v2" alt="Departure Mono Regular preview" width="720">
 
@@ -86,9 +86,7 @@
 
 <img src="assets/previews/IosevkaTermSlabCompact-Regular.svg?v=transparent-v2" alt="Iosevka Term Slab Compact preview" width="720">
 
-#### Pixel_IosevkaSlab_24.ttf
 
-<img src="assets/previews/Pixel_IosevkaSlab_24.svg?v=transparent-v2" alt="Pixel Iosevka Slab 24 preview" width="720">
 
 #### RuneScape.ttf
 
