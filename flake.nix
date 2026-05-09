@@ -43,6 +43,8 @@
         in {
           default = pkgs.mkShell {
             packages = [
+              pkgs.nodejs_22
+              pkgs.ttfautohint
               (pkgs.python3.withPackages (ps: [ ps.fonttools ps.uharfbuzz ]))
             ];
           };

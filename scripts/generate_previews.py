@@ -21,7 +21,8 @@ import uharfbuzz as hb
 PHRASE = "Sphinx of black quartz, judge my vow."
 FONT_EXTS = {".ttf", ".otf"}
 DEFAULT_README = Path("README.md")
-README_SECTION_HEADING = "## Previews"
+PREVIEW_START = "<!-- previews:start -->"
+PREVIEW_END = "<!-- previews:end -->"
 PREVIEW_CACHE_VERSION = "transparent-v2"
 
 
@@ -212,7 +213,8 @@ def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
 
 
 def readme_preview_section(rows: list[tuple[str, str, str]], text: str, image_width: int) -> str:
-    return f"""Preview phrase: “{text}”
+    return f"""{PREVIEW_START}
+Preview phrase: “{text}”
 
 Regenerate the SVGs and this README section with:
 
@@ -221,6 +223,7 @@ nix develop -c ./scripts/generate_previews.py
 ```
 
 {preview_list(rows, image_width).rstrip()}
+{PREVIEW_END}
 """
 
 
@@ -230,16 +233,32 @@ def update_readme(readme_path: Path, section: str) -> None:
     else:
         readme = ""
 
-    heading_re = re.compile(r"(?m)^## Previews\s*$")
-    match = heading_re.search(readme)
-    if match:
-        next_heading = re.search(r"(?m)^## ", readme[match.end():])
-        end = match.end() + next_heading.start() if next_heading else len(readme)
-        updated = readme[:match.start()] + section.rstrip() + "\n\n" + readme[end:].lstrip("\n")
+    marker_re = re.compile(
+        re.escape(PREVIEW_START) + r".*?" + re.escape(PREVIEW_END),
+        re.DOTALL,
+    )
+    if marker_re.search(readme):
+        updated = marker_re.sub(section.rstrip(), readme, count=1)
     else:
-        separator = "\n\n" if readme and not readme.endswith("\n\n") else ""
-        updated = readme + separator + section.rstrip() + "\n"
+        # Legacy fallback from before the generated block had markers: replace the
+        # first preview block before the Nix section, rather than appending forever.
+        preview_start = readme.find("Preview phrase:")
+        nix_start = readme.find("## Nix")
+        if preview_start != -1 and nix_start != -1 and preview_start < nix_start:
+            updated = readme[:preview_start] + section.rstrip() + "\n\n" + readme[nix_start:]
+        else:
+            insert_at = nix_start if nix_start != -1 else len(readme)
+            prefix = readme[:insert_at].rstrip()
+            suffix = readme[insert_at:].lstrip("\n")
+            updated = prefix + "\n\n" + section.rstrip() + "\n\n" + suffix
 
+    marker_end = updated.find(PREVIEW_END)
+    if marker_end != -1:
+        marker_end += len(PREVIEW_END)
+        head = updated[:marker_end]
+        tail = updated[marker_end:]
+        tail = re.sub(r"\n{2,}Preview phrase:.*?(?=\n## |\Z)", "\n", tail, flags=re.DOTALL)
+        updated = head + tail
     readme_path.write_text(updated, encoding="utf-8")
 
 
