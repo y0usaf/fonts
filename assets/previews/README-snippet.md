@@ -92,6 +92,10 @@
 
 <img src="assets/previews/RuneScape.svg?v=transparent-v2" alt="RuneScape preview" width="720">
 
+#### RuneScape Small
+
+<img src="assets/previews/runescape_small.svg?v=transparent-v2" alt="RuneScape Small preview" width="720">
+
 #### RuneScape Small Mono
 
 <img src="assets/previews/runescape_small_mono.svg?v=transparent-v2" alt="RuneScape Small Mono preview" width="720">
