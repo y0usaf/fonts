@@ -54,9 +54,17 @@
 
 <img src="assets/previews/DepartureMonoCondensed-Regular.svg?v=transparent-v2" alt="Departure Mono Condensed Regular preview" width="720">
 
+#### Departure Mono Condensed Compact Regular
+
+<img src="assets/previews/DepartureMonoCondensedCompact-Regular.svg?v=transparent-v2" alt="Departure Mono Condensed Compact Regular preview" width="720">
+
 #### Envy Code B 10pt
 
 <img src="assets/previews/EnvyCodeB10pt-Regular.svg?v=transparent-v2" alt="Envy Code B 10pt preview" width="720">
+
+#### Envy Code B 10pt Compact Regular
+
+<img src="assets/previews/EnvyCodeB10ptCompact-Regular.svg?v=transparent-v2" alt="Envy Code B 10pt Compact Regular preview" width="720">
 
 #### Iosevka Term Slab Compact Bold
 
