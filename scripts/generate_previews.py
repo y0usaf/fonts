@@ -46,12 +46,14 @@ def name_record(font: TTFont, name_id: int) -> str | None:
 
 
 def font_label(font: TTFont, fallback: str) -> str:
+    full = name_record(font, 4)
     family = name_record(font, 1)
     subfamily = name_record(font, 2)
-    full = name_record(font, 4)
+    if full:
+        return full
     if family and subfamily and subfamily.lower() != "regular":
         return f"{family} {subfamily}"
-    return full or family or fallback
+    return family or fallback
 
 
 def glyph_bounds(glyph_set, glyph_name: str):
@@ -170,21 +172,15 @@ def readme_image_src(path: str) -> str:
 def preview_items(rows: list[tuple[str, str, str]], image_width: int, heading_level: int) -> str:
     heading = "#" * heading_level
     return "".join(
-        f"{heading} {name}\n\n"
+        f"{heading} {label}\n\n"
         f'<img src="{readme_image_src(path)}" alt="{html.escape(label)} preview" width="{image_width}">\n\n'
-        for name, label, path in rows
+        for _filename, label, path in rows
     )
 
 
 def preview_group(title: str, rows: list[tuple[str, str, str]], image_width: int) -> str:
     return (
-        "<table>\n"
-        "  <tr>\n"
-        "    <td align=\"center\">\n"
-        f"      <h2 align=\"center\">{html.escape(title)}</h2>\n"
-        "    </td>\n"
-        "  </tr>\n"
-        "</table>\n\n"
+        f'<h2 align="center">{html.escape(title)}</h2>\n\n'
         + preview_items(rows, image_width, 4).rstrip()
     )
 
@@ -214,15 +210,24 @@ def preview_list(rows: list[tuple[str, str, str]], image_width: int) -> str:
 
 def readme_preview_section(rows: list[tuple[str, str, str]], text: str, image_width: int) -> str:
     return f"""{PREVIEW_START}
+{preview_list(rows, image_width).rstrip()}
+
 Preview phrase: “{text}”
 
-Regenerate the SVGs and this README section with:
+Regenerate the SVGs and this README section with Nix:
 
 ```bash
 nix develop -c ./scripts/generate_previews.py
 ```
 
-{preview_list(rows, image_width).rstrip()}
+Or without Nix:
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python3 -m pip install fonttools uharfbuzz
+./scripts/generate_previews.py
+```
 {PREVIEW_END}
 """
 

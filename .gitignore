@@ -12,3 +12,8 @@ __pycache__/
 # UV
 .python-version
 
+# Nix
+result
+result-*
+.direnv/
+
