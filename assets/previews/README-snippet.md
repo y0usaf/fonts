@@ -50,6 +50,10 @@
 
 <img src="assets/previews/DepartureMono-Regular.svg?v=transparent-v2" alt="Departure Mono Regular preview" width="720">
 
+#### Departure Mono Compact Regular
+
+<img src="assets/previews/DepartureMonoCompact-Regular.svg?v=transparent-v2" alt="Departure Mono Compact Regular preview" width="720">
+
 #### Departure Mono Condensed Regular
 
 <img src="assets/previews/DepartureMonoCondensed-Regular.svg?v=transparent-v2" alt="Departure Mono Condensed Regular preview" width="720">
