@@ -279,22 +279,32 @@ def main() -> None:
     args = parser.parse_args()
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
-    font_paths = sorted(p for p in args.fonts_dir.iterdir() if p.suffix.lower() in FONT_EXTS)
+    font_paths = sorted(
+        p for p in args.fonts_dir.rglob("*") if p.is_file() and p.suffix.lower() in FONT_EXTS
+    )
     if not font_paths:
         raise SystemExit(f"No fonts found in {args.fonts_dir}")
 
+    def svg_rel_path(font_path: Path) -> Path:
+        rel = font_path.relative_to(args.fonts_dir)
+        return rel.parent / f"{safe_id(font_path.stem)}.svg"
+
     rows = []
     for font_path in font_paths:
-        out_path = args.out_dir / f"{safe_id(font_path.stem)}.svg"
+        out_path = args.out_dir / svg_rel_path(font_path)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
         label, svg_path = make_preview(font_path, out_path, args.text, args.font_size)
         rows.append((font_path.name, label, svg_path))
         print(f"wrote {svg_path}")
 
-    expected_svgs = {f"{safe_id(font_path.stem)}.svg" for font_path in font_paths}
-    for stale_svg in sorted(args.out_dir.glob("*.svg")):
-        if stale_svg.name not in expected_svgs:
+    expected_svgs = {svg_rel_path(font_path).as_posix() for font_path in font_paths}
+    for stale_svg in sorted(args.out_dir.rglob("*.svg")):
+        if stale_svg.relative_to(args.out_dir).as_posix() not in expected_svgs:
             stale_svg.unlink()
             print(f"removed {stale_svg.as_posix()}")
+    for empty_dir in sorted(args.out_dir.rglob("*"), reverse=True):
+        if empty_dir.is_dir() and not any(empty_dir.iterdir()):
+            empty_dir.rmdir()
 
     manifest = args.out_dir / "README-snippet.md"
     manifest.write_text(preview_list(rows, args.image_width), encoding="utf-8")
