@@ -51,7 +51,7 @@
         in {
           default = pkgs.mkShell {
             packages = [
-              (pkgs.python3.withPackages (ps: [ ps.fonttools ps.uharfbuzz ]))
+              (pkgs.python3.withPackages (ps: [ ps.fonttools ps.uharfbuzz ps.freetype-py ]))
             ];
           };
         });

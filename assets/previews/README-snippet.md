@@ -20,13 +20,13 @@
 
 <img src="assets/previews/iosevka-term-slab/IosevkaTermSlab-Regular-Sonic.svg?v=transparent-v2" alt="Iosevka Term Slab Regular Sonic preview" width="720">
 
-#### Iosevka Term Slab Compact Italic Sonic
+#### Iosevka Term Slab Condensed Sonic Italic
 
-<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCompact-Italic-Sonic.svg?v=transparent-v2" alt="Iosevka Term Slab Compact Italic Sonic preview" width="720">
+<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-Italic-Sonic.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed Sonic Italic preview" width="720">
 
-#### Iosevka Term Slab Compact Regular Sonic
+#### Iosevka Term Slab Condensed Sonic
 
-<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCompact-Regular-Sonic.svg?v=transparent-v2" alt="Iosevka Term Slab Compact Regular Sonic preview" width="720">
+<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-Regular-Sonic.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed Sonic preview" width="720">
 
 #### RuneScape Regular Sonic
 
@@ -50,49 +50,73 @@
 
 <img src="assets/previews/departure-mono/DepartureMono-Regular.svg?v=transparent-v2" alt="Departure Mono Regular preview" width="720">
 
-#### Departure Mono Compact Regular
-
-<img src="assets/previews/departure-mono/DepartureMonoCompact-Regular.svg?v=transparent-v2" alt="Departure Mono Compact Regular preview" width="720">
-
 #### Departure Mono Condensed Regular
 
 <img src="assets/previews/departure-mono/DepartureMonoCondensed-Regular.svg?v=transparent-v2" alt="Departure Mono Condensed Regular preview" width="720">
 
-#### Departure Mono Condensed Compact Regular
+#### Departure Mono Semi Condensed
 
-<img src="assets/previews/departure-mono/DepartureMonoCondensedCompact-Regular.svg?v=transparent-v2" alt="Departure Mono Condensed Compact Regular preview" width="720">
+<img src="assets/previews/departure-mono/DepartureMonoSemiCondensed-Regular.svg?v=transparent-v2" alt="Departure Mono Semi Condensed preview" width="720">
+
+#### Departure Mono Ultra Condensed
+
+<img src="assets/previews/departure-mono/DepartureMonoUltraCondensed-Regular.svg?v=transparent-v2" alt="Departure Mono Ultra Condensed preview" width="720">
+
+#### Departure Mono Ultra Condensed Compact
+
+<img src="assets/previews/departure-mono/DepartureMonoUltraCondensedCompact-Regular.svg?v=transparent-v2" alt="Departure Mono Ultra Condensed Compact preview" width="720">
 
 #### Envy Code B 10pt
 
 <img src="assets/previews/envy-code-b/EnvyCodeB10pt-Regular.svg?v=transparent-v2" alt="Envy Code B 10pt preview" width="720">
 
-#### Envy Code B 10pt Compact Regular
+#### Envy Code B 10pt Condensed
 
-<img src="assets/previews/envy-code-b/EnvyCodeB10ptCompact-Regular.svg?v=transparent-v2" alt="Envy Code B 10pt Compact Regular preview" width="720">
+<img src="assets/previews/envy-code-b/EnvyCodeB10ptCondensed-Regular.svg?v=transparent-v2" alt="Envy Code B 10pt Condensed preview" width="720">
 
-#### Iosevka Term Slab Compact Bold
+#### Envy Code B 10pt Semi Condensed
 
-<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCompact-Bold.svg?v=transparent-v2" alt="Iosevka Term Slab Compact Bold preview" width="720">
+<img src="assets/previews/envy-code-b/EnvyCodeB10ptSemiCondensed-Regular.svg?v=transparent-v2" alt="Envy Code B 10pt Semi Condensed preview" width="720">
 
-#### Iosevka Term Slab Compact Bold Italic
+#### Iosevka Pixel Slab Regular
 
-<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCompact-BoldItalic.svg?v=transparent-v2" alt="Iosevka Term Slab Compact Bold Italic preview" width="720">
+<img src="assets/previews/iosevka-pixel-slab/IosevkaPixelSlab-Regular.svg?v=transparent-v2" alt="Iosevka Pixel Slab Regular preview" width="720">
 
-#### Iosevka Term Slab Compact Italic
+#### Iosevka Pixel Slab Compact Regular
 
-<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCompact-Italic.svg?v=transparent-v2" alt="Iosevka Term Slab Compact Italic preview" width="720">
+<img src="assets/previews/iosevka-pixel-slab/IosevkaPixelSlabCompact-Regular.svg?v=transparent-v2" alt="Iosevka Pixel Slab Compact Regular preview" width="720">
 
-#### Iosevka Term Slab Compact Light
+#### Iosevka Pixel Slab Condensed Compact Regular
 
-<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCompact-Light.svg?v=transparent-v2" alt="Iosevka Term Slab Compact Light preview" width="720">
+<img src="assets/previews/iosevka-pixel-slab/IosevkaPixelSlabCondensedCompact-Regular.svg?v=transparent-v2" alt="Iosevka Pixel Slab Condensed Compact Regular preview" width="720">
 
-#### Iosevka Term Slab Compact Light Italic
+#### Iosevka Pixel Slab Squat Regular
 
-<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCompact-LightItalic.svg?v=transparent-v2" alt="Iosevka Term Slab Compact Light Italic preview" width="720">
+<img src="assets/previews/iosevka-pixel-slab/IosevkaPixelSlabSquat-Regular.svg?v=transparent-v2" alt="Iosevka Pixel Slab Squat Regular preview" width="720">
 
-#### Iosevka Term Slab Compact
+#### Iosevka Term Slab Condensed Bold
 
-<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCompact-Regular.svg?v=transparent-v2" alt="Iosevka Term Slab Compact preview" width="720">
+<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-Bold.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed Bold preview" width="720">
+
+#### Iosevka Term Slab Condensed Bold Italic
+
+<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-BoldItalic.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed Bold Italic preview" width="720">
+
+#### Iosevka Term Slab Condensed Italic
+
+<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-Italic.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed Italic preview" width="720">
+
+#### Iosevka Term Slab Condensed Light
+
+<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-Light.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed Light preview" width="720">
+
+#### Iosevka Term Slab Condensed Light Italic
+
+<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-LightItalic.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed Light Italic preview" width="720">
+
+#### Iosevka Term Slab Condensed
+
+<img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-Regular.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed preview" width="720">
 
 #### RuneScape
 
