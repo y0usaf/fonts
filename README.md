@@ -51,6 +51,10 @@
 
 <img src="assets/previews/commit-mono/CommitMono-275-Regular.svg?v=transparent-v2" alt="CommitMono 275 Regular preview" width="720">
 
+#### Cozette Vector Px Regular
+
+<img src="assets/previews/cozette/CozetteVectorPx-Regular.svg?v=transparent-v2" alt="Cozette Vector Px Regular preview" width="720">
+
 #### Departure Mono Regular
 
 <img src="assets/previews/departure-mono/DepartureMono-Regular.svg?v=transparent-v2" alt="Departure Mono Regular preview" width="720">
@@ -122,6 +126,54 @@
 #### Iosevka Term Slab Condensed
 
 <img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-Regular.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed preview" width="720">
+
+#### Monocraft Black Italic
+
+<img src="assets/previews/monocraft/Monocraft-Black-Italic.svg?v=transparent-v2" alt="Monocraft Black Italic preview" width="720">
+
+#### Monocraft Black
+
+<img src="assets/previews/monocraft/Monocraft-Black.svg?v=transparent-v2" alt="Monocraft Black preview" width="720">
+
+#### Monocraft Bold Italic
+
+<img src="assets/previews/monocraft/Monocraft-Bold-Italic.svg?v=transparent-v2" alt="Monocraft Bold Italic preview" width="720">
+
+#### Monocraft Bold
+
+<img src="assets/previews/monocraft/Monocraft-Bold.svg?v=transparent-v2" alt="Monocraft Bold preview" width="720">
+
+#### Monocraft ExtraLight Italic
+
+<img src="assets/previews/monocraft/Monocraft-ExtraLight-Italic.svg?v=transparent-v2" alt="Monocraft ExtraLight Italic preview" width="720">
+
+#### Monocraft ExtraLight
+
+<img src="assets/previews/monocraft/Monocraft-ExtraLight.svg?v=transparent-v2" alt="Monocraft ExtraLight preview" width="720">
+
+#### Monocraft Italic
+
+<img src="assets/previews/monocraft/Monocraft-Italic.svg?v=transparent-v2" alt="Monocraft Italic preview" width="720">
+
+#### Monocraft Light Italic
+
+<img src="assets/previews/monocraft/Monocraft-Light-Italic.svg?v=transparent-v2" alt="Monocraft Light Italic preview" width="720">
+
+#### Monocraft Light
+
+<img src="assets/previews/monocraft/Monocraft-Light.svg?v=transparent-v2" alt="Monocraft Light preview" width="720">
+
+#### Monocraft SemiBold Italic
+
+<img src="assets/previews/monocraft/Monocraft-SemiBold-Italic.svg?v=transparent-v2" alt="Monocraft SemiBold Italic preview" width="720">
+
+#### Monocraft SemiBold
+
+<img src="assets/previews/monocraft/Monocraft-SemiBold.svg?v=transparent-v2" alt="Monocraft SemiBold preview" width="720">
+
+#### Monocraft
+
+<img src="assets/previews/monocraft/Monocraft.svg?v=transparent-v2" alt="Monocraft preview" width="720">
 
 #### RuneScape
 
