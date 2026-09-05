@@ -1,0 +1,128 @@
+{
+  "viewport": [
+    640,
+    330
+  ],
+  "fonts": [
+    {
+      "file": "fonts/departure-mono/DepartureMonoUltraCondensedCompact-Regular.ttf",
+      "ppem": 11,
+      "advance": 5.0,
+      "line": 11.0,
+      "columns": 128,
+      "rows": 30,
+      "characters": 3840,
+      "cap_ink_height": 8,
+      "x_ink_height": 6,
+      "ascii_ink_y": [
+        -2,
+        8
+      ]
+    },
+    {
+      "file": "fonts/pixel-mono/PixelMonoTight-Regular.ttf",
+      "ppem": 11,
+      "advance": 6.0,
+      "line": 11.0,
+      "columns": 106,
+      "rows": 30,
+      "characters": 3180,
+      "cap_ink_height": 8,
+      "x_ink_height": 6,
+      "ascii_ink_y": [
+        -2,
+        8
+      ]
+    },
+    {
+      "file": "fonts/pixel-mono/PixelMonoBalanced-Regular.ttf",
+      "ppem": 11,
+      "advance": 6.0,
+      "line": 12.0,
+      "columns": 106,
+      "rows": 27,
+      "characters": 2862,
+      "cap_ink_height": 8,
+      "x_ink_height": 6,
+      "ascii_ink_y": [
+        -2,
+        8
+      ]
+    },
+    {
+      "file": "fonts/pixel-mono/PixelMonoOpen-Regular.ttf",
+      "ppem": 11,
+      "advance": 7.0,
+      "line": 12.0,
+      "columns": 91,
+      "rows": 27,
+      "characters": 2457,
+      "cap_ink_height": 8,
+      "x_ink_height": 6,
+      "ascii_ink_y": [
+        -2,
+        8
+      ]
+    },
+    {
+      "file": "fonts/astra-pixel/AstraPixel-Regular.ttf",
+      "ppem": 10,
+      "advance": 5.0,
+      "line": 10.0,
+      "columns": 128,
+      "rows": 33,
+      "characters": 4224,
+      "cap_ink_height": 8,
+      "x_ink_height": 6,
+      "ascii_ink_y": [
+        -1,
+        7
+      ]
+    },
+    {
+      "file": "fonts/astra-pixel/AstraPixelFacet-Regular.ttf",
+      "ppem": 10,
+      "advance": 5.0,
+      "line": 10.0,
+      "columns": 128,
+      "rows": 33,
+      "characters": 4224,
+      "cap_ink_height": 7,
+      "x_ink_height": 5,
+      "ascii_ink_y": [
+        -2,
+        6
+      ]
+    },
+    {
+      "file": "fonts/astra-pixel/AstraPixelLoom-Regular.ttf",
+      "ppem": 10,
+      "advance": 5.0,
+      "line": 10.0,
+      "columns": 128,
+      "rows": 33,
+      "characters": 4224,
+      "cap_ink_height": 7,
+      "x_ink_height": 5,
+      "ascii_ink_y": [
+        -2,
+        6
+      ]
+    },
+    {
+      "file": "fonts/astra-pixel/AstraPixelReed-Regular.ttf",
+      "ppem": 10,
+      "advance": 4.0,
+      "line": 10.0,
+      "columns": 160,
+      "rows": 33,
+      "characters": 5280,
+      "cap_ink_height": 7,
+      "x_ink_height": 5,
+      "ascii_ink_y": [
+        -2,
+        6
+      ]
+    }
+  ]
+}

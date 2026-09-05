@@ -1,0 +1,21 @@
+# All distances are integer pixels at 11 ppem. Glyphs occupy five columns.
+[plans.balanced]
+family = "Pixel Mono Balanced"
+letter_gap = 1
+line_gap = 1
+zero = "slashed"
+ell = "serifed"
+
+[plans.tight]
+family = "Pixel Mono Tight"
+letter_gap = 1
+line_gap = 0
+zero = "slashed"
+ell = "serifed"
+
+[plans.open]
+family = "Pixel Mono Open"
+letter_gap = 2
+line_gap = 1
+zero = "dotted"
+ell = "tailed"

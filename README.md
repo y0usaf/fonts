@@ -2,6 +2,27 @@
 
 <p align="center">Fonts I use</p>
 
+
+## Astra Pixel
+
+An original monospaced pixel font for dense code. **Astra Pixel Regular 1.0.0**
+uses a 5 × 10px cell at 10px: 10% more rows than compact Departure with the
+same 8px capitals and 6px lowercase. Complete printable ASCII and light
+terminal box drawing; short descenders keep lines compact.
+
+[Download the TTF](fonts/astra-pixel/AstraPixel-Regular.ttf) ·
+[Offline comparison](assets/previews/astra-pixel/comparison.html) ·
+[Editable sources and design notes](sources/astra-pixel/README.md)
+
+<img src="assets/previews/astra-pixel/AstraPixel-Regular.svg" alt="Astra Pixel Regular preview" width="720">
+
+```sh
+nix profile install github:y0usaf/fonts#astra-pixel
+```
+
+The package also retains Facet, Loom and Reed design alternatives. The
+comparison includes compact Departure and all three original Pixel Mono presets.
+
 <!-- previews:start -->
 <h2 align="center">⚡ Sonic Fonts ⚡</h2>
 

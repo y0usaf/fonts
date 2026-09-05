@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pixel Mono — design specimen</title>
+<style>
+:root {color-scheme:dark;background:#16191c;color:#e7e5df;font:15px system-ui}body{max-width:1100px;margin:48px auto;padding:0 24px}h1{font-weight:500;letter-spacing:-1px;font-size:36px;margin-bottom:8px}p{color:#adb3b7;line-height:1.6}label{display:inline-block;margin:12px 24px 12px 0}textarea{box-sizing:border-box;width:100%;height:145px;padding:16px;background:#20252a;color:inherit;border:1px solid #424950;border-radius:6px}select,button{padding:6px;background:#20252a;color:inherit;border:1px solid #596169}section{border-top:1px solid #424950;margin-top:28px;padding-top:12px}h2{font-size:16px;font-weight:500}small{color:#adb3b7}pre{overflow:auto;padding:20px 0;font-kerning:none;font-variant-ligatures:none;margin:0}body.light{background:#eeeae1;color:#20252a;color-scheme:light}body.light p,body.light small{color:#535b61}
+</style>
+<h1>Pixel Mono</h1><p>A study in density, rhythm, and five-column letterforms. Compare at the same pixel scale; inspect both the texture of text and the difficult symbols.</p>
+<label>Pixel scale <select id="scale"><option value="1">1× · native</option><option value="2" selected>2×</option><option value="3">3×</option><option value="4">4×</option></select></label>
+<button id="theme">Toggle light / dark</button>
+<label><input id="ascii" type="checkbox"> Show full ASCII</label>
+<textarea id="sample" aria-label="Specimen text" spellcheck="false">const minimum = (width, height) => width * height;
+if (items[0] !== null) { return "Hello, world!"; }
+0O 1Il| rn m  {} [] ()  #$%&amp;@  != &lt;= -&gt;
+Sphinx of black quartz, judge my vow.
+minimum aluminum rhythm / 0123456789</textarea>
+<p>Native design size: 11px. Integer scales preserve the intended pixel grid when display scaling and placement also align. Tight uses no additional blank row. ASCII coverage only.</p>
+<main id="previews"></main>
+<script>
+const fonts = /* FONT_DATA */;
+const scale = document.querySelector('#scale'), sample = document.querySelector('#sample'), ascii = document.querySelector('#ascii');
+const allAscii = Array.from({length:95},(_,i)=>String.fromCharCode(i+32)).join('').match(/.{1,32}/g).join('\n');
+async function start(){
+ for(const [i,font] of fonts.entries()){
+  const face = new FontFace('specimen'+i,`url(data:font/ttf;base64,${font.data})`);
+  await face.load();document.fonts.add(face);
+  const section = document.createElement('section'), title = document.createElement('h2'), meta = document.createElement('small'), pre = document.createElement('pre');
+  title.textContent=font.label;meta.textContent=`${font.advance}px advance · ${font.line}px line · ${Math.floor(600/font.advance)} columns / 600 native pixels`;
+  pre.style.fontFamily='specimen'+i;section.append(title,meta,pre);document.querySelector('#previews').append(section);font.pre=pre;
+ }
+ render();
+}
+function render(){for(const font of fonts){if(!font.pre)continue;font.pre.style.fontSize=(11*Number(scale.value))+'px';font.pre.style.lineHeight=(font.line*Number(scale.value))+'px';font.pre.textContent=ascii.checked?allAscii:sample.value;}}
+scale.onchange=ascii.onchange=sample.oninput=render;
+document.querySelector('#theme').onclick=()=>document.body.classList.toggle('light');
+start().catch(error=>{document.querySelector('#previews').textContent='Could not load specimen: '+error.message;});
+</script></html>

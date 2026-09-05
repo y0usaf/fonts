@@ -1,0 +1,2 @@
+# Optional serif ell: longer foot, distinct from flagged 1 and barred I.
+006C ##../.#../.#../.#../.#../.#../.#../.##.

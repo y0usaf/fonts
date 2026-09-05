@@ -1,0 +1,52 @@
+{
+  "Text": {
+    "sources": [
+      "facet.txt",
+      "text.txt"
+    ],
+    "width": 4,
+    "advance": 5,
+    "ascent": 9,
+    "descent": 1,
+    "cap": 8,
+    "ppem": 10,
+    "alternates": {
+      "dotted-zero": "text-dotted-zero.txt",
+      "serif-ell": "text-serif-ell.txt"
+    }
+  },
+  "Facet": {
+    "sources": [
+      "facet.txt"
+    ],
+    "width": 4,
+    "advance": 5,
+    "ascent": 8,
+    "descent": 2,
+    "cap": 7,
+    "ppem": 10
+  },
+  "Loom": {
+    "sources": [
+      "facet.txt",
+      "loom.txt"
+    ],
+    "width": 4,
+    "advance": 5,
+    "ascent": 8,
+    "descent": 2,
+    "cap": 7,
+    "ppem": 10
+  },
+  "Reed": {
+    "sources": [
+      "reed.txt"
+    ],
+    "width": 3,
+    "advance": 4,
+    "ascent": 8,
+    "descent": 2,
+    "cap": 7,
+    "ppem": 10
+  }
+}
