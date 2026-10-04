@@ -166,6 +166,10 @@
 
 <img src="assets/previews/monocraft/Monocraft.svg?v=transparent-v2" alt="Monocraft preview" width="720">
 
+#### Moono Regular
+
+<img src="assets/previews/moono/Moono-Regular.svg?v=transparent-v2" alt="Moono Regular preview" width="720">
+
 #### RuneScape
 
 <img src="assets/previews/runescape/RuneScape.svg?v=transparent-v2" alt="RuneScape preview" width="720">
