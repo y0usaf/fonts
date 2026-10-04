@@ -88,10 +88,6 @@ comparison includes compact Departure and all three original Pixel Mono presets.
 
 <img src="assets/previews/departure-mono/DepartureMonoSemiCondensed-Regular.svg?v=transparent-v2" alt="Departure Mono Semi Condensed preview" width="720">
 
-#### Departure Mono Ultra Condensed
-
-<img src="assets/previews/departure-mono/DepartureMonoUltraCondensed-Regular.svg?v=transparent-v2" alt="Departure Mono Ultra Condensed preview" width="720">
-
 #### Departure Mono Ultra Condensed Compact
 
 <img src="assets/previews/departure-mono/DepartureMonoUltraCondensedCompact-Regular.svg?v=transparent-v2" alt="Departure Mono Ultra Condensed Compact preview" width="720">
