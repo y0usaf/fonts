@@ -23,6 +23,26 @@ nix profile install github:y0usaf/fonts#astra-pixel
 The package also retains Facet, Loom and Reed design alternatives. The
 comparison includes compact Departure and all three original Pixel Mono presets.
 
+## Lath Mono Condensed Compact
+
+Rysana Mono on the cell of Departure Mono Ultra Condensed Compact: 0.454em
+wide (10px at 22px), so a terminal gets as many columns as with compact
+Departure, plus Rysana's Greek, Cyrillic, Hebrew, Arabic, Thai, kana, Hangul,
+Braille and math. The outlines are the wght 550 instance scaled to 75.7%
+width, which keeps vertical stems within 4% of Rysana Regular. The line holds
+ASCII and accented capitals (1.061em, from 1.31em), box drawing and blocks
+are rescaled onto it, and the 865 characters Rysana draws two cells wide but
+Unicode gives one cell are squeezed into one. "Rysana" is a Reserved Font
+Name under the OFL, hence the new name; see [the license](fonts/lath-mono/LICENSE).
+
+Regenerate from `fonts/RysanaMono-Variable.ttf` in npm `rysana-type` 1.0.1:
+
+```sh
+./scripts/condense_outline.py RysanaMono-Variable.ttf --wght 550 --advance 454 \
+  --ascent 878 --descent 183 --family "Lath Mono Condensed Compact" \
+  --out fonts/lath-mono/LathMonoCondensedCompact-Regular.ttf
+```
+
 <!-- previews:start -->
 <h2 align="center">⚡ Sonic Fonts ⚡</h2>
 
