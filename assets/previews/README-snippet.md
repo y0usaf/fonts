@@ -38,6 +38,10 @@
 
 <h2 align="center">🍉 Regular Fonts 🍉</h2>
 
+#### my 3x5 tiny mono pixel font Regular
+
+<img src="assets/previews/another-tiny-pixel-font-mono/AnotherTinyPixelFontMono3x5-Regular.svg?v=transparent-v2" alt="my 3x5 tiny mono pixel font Regular preview" width="720">
+
 #### CommitMono 275 Italic
 
 <img src="assets/previews/commit-mono/CommitMono-275-Italic.svg?v=transparent-v2" alt="CommitMono 275 Italic preview" width="720">
@@ -118,6 +122,18 @@
 
 <img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-Regular.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed preview" width="720">
 
+#### m3x6 Mono Regular
+
+<img src="assets/previews/m3x6-mono/m3x6Mono-Regular.svg?v=transparent-v2" alt="m3x6 Mono Regular preview" width="720">
+
+#### m5x7 Mono Regular
+
+<img src="assets/previews/m5x7-mono/m5x7Mono-Regular.svg?v=transparent-v2" alt="m5x7 Mono Regular preview" width="720">
+
+#### m5x7 Mono Condensed Regular
+
+<img src="assets/previews/m5x7-mono/m5x7MonoCondensed-Regular.svg?v=transparent-v2" alt="m5x7 Mono Condensed Regular preview" width="720">
+
 #### Monocraft Black Italic
 
 <img src="assets/previews/monocraft/Monocraft-Black-Italic.svg?v=transparent-v2" alt="Monocraft Black Italic preview" width="720">
@@ -169,6 +185,18 @@
 #### Moono Regular
 
 <img src="assets/previews/moono/Moono-Regular.svg?v=transparent-v2" alt="Moono Regular preview" width="720">
+
+#### Nib Regular
+
+<img src="assets/previews/nib/Nib-Regular.svg?v=transparent-v2" alt="Nib Regular preview" width="720">
+
+#### Quaver Mono Regular
+
+<img src="assets/previews/quaver-mono/QuaverMono-Regular.svg?v=transparent-v2" alt="Quaver Mono Regular preview" width="720">
+
+#### Quaver Mono Condensed Regular
+
+<img src="assets/previews/quaver-mono/QuaverMonoCondensed-Regular.svg?v=transparent-v2" alt="Quaver Mono Condensed Regular preview" width="720">
 
 #### RuneScape
 

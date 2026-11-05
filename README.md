@@ -64,6 +64,10 @@ comparison includes compact Departure and all three original Pixel Mono presets.
 
 <h2 align="center">🍉 Regular Fonts 🍉</h2>
 
+#### my 3x5 tiny mono pixel font Regular
+
+<img src="assets/previews/another-tiny-pixel-font-mono/AnotherTinyPixelFontMono3x5-Regular.svg?v=transparent-v2" alt="my 3x5 tiny mono pixel font Regular preview" width="720">
+
 #### CommitMono 275 Italic
 
 <img src="assets/previews/commit-mono/CommitMono-275-Italic.svg?v=transparent-v2" alt="CommitMono 275 Italic preview" width="720">
@@ -144,6 +148,18 @@ comparison includes compact Departure and all three original Pixel Mono presets.
 
 <img src="assets/previews/iosevka-term-slab/IosevkaTermSlabCondensed-Regular.svg?v=transparent-v2" alt="Iosevka Term Slab Condensed preview" width="720">
 
+#### m3x6 Mono Regular
+
+<img src="assets/previews/m3x6-mono/m3x6Mono-Regular.svg?v=transparent-v2" alt="m3x6 Mono Regular preview" width="720">
+
+#### m5x7 Mono Regular
+
+<img src="assets/previews/m5x7-mono/m5x7Mono-Regular.svg?v=transparent-v2" alt="m5x7 Mono Regular preview" width="720">
+
+#### m5x7 Mono Condensed Regular
+
+<img src="assets/previews/m5x7-mono/m5x7MonoCondensed-Regular.svg?v=transparent-v2" alt="m5x7 Mono Condensed Regular preview" width="720">
+
 #### Monocraft Black Italic
 
 <img src="assets/previews/monocraft/Monocraft-Black-Italic.svg?v=transparent-v2" alt="Monocraft Black Italic preview" width="720">
@@ -196,6 +212,18 @@ comparison includes compact Departure and all three original Pixel Mono presets.
 
 <img src="assets/previews/moono/Moono-Regular.svg?v=transparent-v2" alt="Moono Regular preview" width="720">
 
+#### Nib Regular
+
+<img src="assets/previews/nib/Nib-Regular.svg?v=transparent-v2" alt="Nib Regular preview" width="720">
+
+#### Quaver Mono Regular
+
+<img src="assets/previews/quaver-mono/QuaverMono-Regular.svg?v=transparent-v2" alt="Quaver Mono Regular preview" width="720">
+
+#### Quaver Mono Condensed Regular
+
+<img src="assets/previews/quaver-mono/QuaverMonoCondensed-Regular.svg?v=transparent-v2" alt="Quaver Mono Condensed Regular preview" width="720">
+
 #### RuneScape
 
 <img src="assets/previews/runescape/RuneScape.svg?v=transparent-v2" alt="RuneScape preview" width="720">
@@ -246,6 +274,20 @@ Or from a local checkout:
 ```bash
 nix profile install .
 ```
+
+## Credits
+
+- **Nib** is an original 5 × 7 pixel monospace in a 6 × 11 cell, built from shared stroke rules.
+- **m5x7 Mono** (6 × 9 cell) and **m5x7 Mono Condensed** (5 × 9 cell) remix
+  [m5x7](https://managore.itch.io/m5x7) by Daniel Linssen (managore), CC0.
+- **m3x6 Mono** (4 × 8 cell) remixes [m3x6](https://managore.itch.io/m3x6) by Daniel Linssen (managore), CC0.
+- **Quaver Mono** (6 × 8 cell) and **Quaver Mono Condensed** (5 × 8 cell) remix
+  [Quaver](https://caffinate.itch.io/quaver) by Nathan Scott (caffinate), CC0.
+- **Another Tiny Pixel Font Mono 3x5**
+  ([itch.io](https://alasseearfalas.itch.io/another-tiny-pixel-font-mono-3x5)) by alasseearfalas, CC0, unchanged.
+
+The remixes keep the original bitmaps and narrow only what does not fit the cell; condensed variants
+use 4px of ink and a 1px gap. Each family folder's `LICENSE` file carries its credit.
 
 ## License
 
