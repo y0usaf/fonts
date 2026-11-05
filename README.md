@@ -286,8 +286,9 @@ nix profile install .
 - **Another Tiny Pixel Font Mono 3x5**
   ([itch.io](https://alasseearfalas.itch.io/another-tiny-pixel-font-mono-3x5)) by alasseearfalas, CC0, unchanged.
 
-The remixes keep the original bitmaps and narrow only what does not fit the cell; condensed variants
-use 4px of ink and a 1px gap. Each family folder's `LICENSE` file carries its credit.
+The remixes keep the original bitmaps and narrow only what does not fit the cell. m5x7 Mono Condensed
+uses 4px of ink and a 1px gap; Quaver Mono Condensed is Quaver Mono's glyphs with the 1px gap removed,
+so its widest glyphs touch their neighbours. Each family folder's `LICENSE` file carries its credit.
 
 ## License
 
