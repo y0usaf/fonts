@@ -1,27 +1,26 @@
 <h1 align="center">fonts</h1>
 
-<p align="center">Fonts I use</p>
+<p align="center">The fonts I use, packaged as a Nix flake with a preview of each.</p>
 
+Each folder in `fonts/` is one family and one Nix package. Most are upstream fonts or remixes; Astra Pixel and Nib are original. "Sonic" variants add a contextual-alternates (`calt`) feature for faster reading.
+
+## Install
+
+```bash
+nix profile install github:y0usaf/fonts              # every family
+nix profile install github:y0usaf/fonts#commit-mono  # one family
+nix flake show github:y0usaf/fonts                   # list families
+```
 
 ## Astra Pixel
 
-An original monospaced pixel font for dense code. **Astra Pixel Regular 1.0.0**
-uses a 5 × 10px cell at 10px: 10% more rows than compact Departure with the
-same 8px capitals and 6px lowercase. Complete printable ASCII and light
-terminal box drawing; short descenders keep lines compact.
+An original monospaced pixel font for dense code: a 5 × 10px cell at 10px, with printable ASCII and light box drawing. The package also holds three alternates: Facet, Loom and Reed.
 
 [Download the TTF](fonts/astra-pixel/AstraPixel-Regular.ttf) ·
 [Offline comparison](assets/previews/astra-pixel/comparison.html) ·
-[Editable sources and design notes](sources/astra-pixel/README.md)
+[Sources and design notes](sources/astra-pixel/README.md)
 
 <img src="assets/previews/astra-pixel/AstraPixel-Regular.svg" alt="Astra Pixel Regular preview" width="720">
-
-```sh
-nix profile install github:y0usaf/fonts#astra-pixel
-```
-
-The package also retains Facet, Loom and Reed design alternatives. The
-comparison includes compact Departure and all three original Pixel Mono presets.
 
 <!-- previews:start -->
 <h2 align="center">⚡ Sonic Fonts ⚡</h2>
@@ -254,44 +253,16 @@ python3 -m pip install fonttools uharfbuzz
 ```
 <!-- previews:end -->
 
-## Nix
-
-Install everything:
-
-```bash
-nix profile install github:y0usaf/fonts
-```
-
-Or a single family — each subfolder of `fonts/` is its own package:
-
-```bash
-nix profile install github:y0usaf/fonts#commit-mono
-nix flake show github:y0usaf/fonts   # list all families
-```
-
-Or from a local checkout:
-
-```bash
-nix profile install .
-```
-
 ## Credits
 
-- **Nib** is an original 5 × 7 pixel monospace in a 6 × 11 cell, built from shared stroke rules.
-- **m5x7 Mono** (6 × 9 cell) and **m5x7 Mono Condensed** (5 × 9 cell) remix
-  [m5x7](https://managore.itch.io/m5x7) by Daniel Linssen (managore), CC0.
-- **m3x6 Mono** (4 × 8 cell) remixes [m3x6](https://managore.itch.io/m3x6) by Daniel Linssen (managore), CC0.
-- **Quaver Mono** (6 × 8 cell) and **Quaver Mono Condensed** (5 × 8 cell) remix
-  [Quaver](https://caffinate.itch.io/quaver) by Nathan Scott (caffinate), CC0.
-- **Another Tiny Pixel Font Mono 3x5**
-  ([itch.io](https://alasseearfalas.itch.io/another-tiny-pixel-font-mono-3x5)) by alasseearfalas, CC0, unchanged.
+- **Nib**: original, 5 × 7 glyphs in a 6 × 11 cell, built from shared stroke rules.
+- **m5x7 Mono** (6 × 9) and **m5x7 Mono Condensed** (5 × 9): remixes of [m5x7](https://managore.itch.io/m5x7) by Daniel Linssen, CC0.
+- **m3x6 Mono** (4 × 8): remix of [m3x6](https://managore.itch.io/m3x6) by Daniel Linssen, CC0.
+- **Quaver Mono** (6 × 8) and **Quaver Mono Condensed** (5 × 8): remixes of [Quaver](https://caffinate.itch.io/quaver) by Nathan Scott, CC0.
+- **Another Tiny Pixel Font Mono 3x5** by [alasseearfalas](https://alasseearfalas.itch.io/another-tiny-pixel-font-mono-3x5), CC0, unchanged.
 
-The remixes keep the original bitmaps and narrow only what does not fit the cell. m5x7 Mono Condensed
-uses 4px of ink and a 1px gap; Quaver Mono Condensed is Quaver Mono's glyphs with the 1px gap removed,
-so its widest glyphs touch their neighbours. Each family folder's `LICENSE` file carries its credit.
+The remixes keep the original bitmaps and only narrow glyphs that don't fit the cell. Each family folder's `LICENSE` carries its credit.
 
 ## License
 
-This repository is licensed under the GNU Affero General Public License v3.0 or later. See [`LICENSE`](LICENSE).
-
-Bundled/generated font binaries may retain license requirements from their upstream source families. Keep upstream copyright and license notices where required.
+AGPL-3.0-or-later; see [`LICENSE`](LICENSE). Bundled fonts keep their upstream licenses.
