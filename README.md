@@ -255,7 +255,7 @@ python3 -m pip install fonttools uharfbuzz
 
 ## Credits
 
-- **Nib**: original, 5 × 7 glyphs in a 6 × 11 cell, built from shared stroke rules.
+- **Nib**: original, 5 × 7 glyphs in a 6 × 10 cell, built from shared stroke rules.
 - **m5x7 Mono** (6 × 9) and **m5x7 Mono Condensed** (5 × 9): remixes of [m5x7](https://managore.itch.io/m5x7) by Daniel Linssen, CC0.
 - **m3x6 Mono** (4 × 8): remix of [m3x6](https://managore.itch.io/m3x6) by Daniel Linssen, CC0.
 - **Quaver Mono** (6 × 8) and **Quaver Mono Condensed** (5 × 8): remixes of [Quaver](https://caffinate.itch.io/quaver) by Nathan Scott, CC0.
